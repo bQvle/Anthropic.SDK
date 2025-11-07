@@ -115,7 +115,7 @@ namespace Anthropic.SDK.Messaging
                     name = result.ContentBlock.Name;
                     id = result.ContentBlock.Id;
                 }
-                if (result.Delta?.PartialJson != null)
+                if (!string.IsNullOrWhiteSpace(result.Delta?.PartialJson))
                 {
                     arguments += result.Delta.PartialJson;
                 }
